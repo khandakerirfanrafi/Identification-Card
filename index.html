@@ -136,62 +136,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 108, 76, 0.4);
         }
-
-        .ai-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .ai-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #006C4C;
-            transform: translateY(-2px);
-        }
-
-        /* Modal Styles */
-        .modal-card {
-            background: #0f0f0f;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .tab-btn.active {
-            background: #006C4C;
-            color: white;
-            border-color: #006C4C;
-        }
-
-        .chat-msg-ai {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px 12px 12px 0;
-        }
-
-        .chat-msg-user {
-            background: #006C4C;
-            color: white;
-            border-radius: 12px 12px 0 12px;
-        }
-        
-        /* Shimmer effect for AI Button */
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        .shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-            transform: skewX(-25deg);
-            animation: shimmer 3s infinite;
-        }
-        @keyframes shimmer {
-            100% { left: 200%; }
-        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
@@ -297,15 +241,10 @@
         </div>
 
         <!-- Buttons -->
-        <!-- Added py-6 for vertical spacing (top and bottom gap) -->
         <div class="px-4 py-6 flex gap-3">
             <button onclick="saveContact()" class="btn-style save-btn flex-1">
                 <i data-lucide="user-plus" class="w-5 h-5"></i>
                 <span>Save</span>
-            </button>
-            <button onclick="openAI()" class="btn-style ai-btn flex-1 shimmer">
-                <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                <span>AI Assist</span>
             </button>
         </div>
 
@@ -316,82 +255,8 @@
 
     </div>
 
-    <!-- AI Modal -->
-    <div id="ai-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
-        <div class="modal-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl transform transition-all">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-4 border-b border-white/10 bg-white/5">
-                <h3 class="text-white font-semibold flex items-center gap-2">
-                    <i data-lucide="bot" class="w-5 h-5 text-[#006C4C]"></i> Irfan's AI Assistant
-                </h3>
-                <button onclick="closeAI()" class="text-gray-400 hover:text-white">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Tabs -->
-            <div class="flex p-2 gap-2 bg-black/20">
-                <button onclick="switchTab('chat')" id="tab-chat" class="tab-btn active flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Chat</button>
-                <button onclick="switchTab('draft')" id="tab-draft" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Draft</button>
-                <button onclick="switchTab('idea')" id="tab-idea" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Ideas</button>
-            </div>
-
-            <!-- Tab Content: Chat -->
-            <div id="content-chat" class="p-4 h-80 flex flex-col">
-                <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 mb-4 pr-2">
-                    <div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4">
-                        Hi! I'm Irfan's AI assistant. Ask me anything about his skills or projects!
-                    </div>
-                </div>
-                <div class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="Ask something..." class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                    <button onclick="handleChat()" class="bg-[#006C4C] p-2 rounded-lg text-white hover:bg-[#005239]">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Tab Content: Draft -->
-            <div id="content-draft" class="p-4 h-80 hidden flex-col gap-4">
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Your Name</label>
-                    <input type="text" id="draft-name" placeholder="e.g. John Doe" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Purpose</label>
-                    <select id="draft-purpose" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                        <option value="Hiring" class="bg-gray-900">Hiring Inquiry</option>
-                        <option value="Collaboration" class="bg-gray-900">Collaboration</option>
-                        <option value="Greeting" class="bg-gray-900">Just Saying Hi</option>
-                    </select>
-                </div>
-                <button onclick="handleDraft()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Generate Message</button>
-                <div id="draft-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
-            </div>
-
-            <!-- Tab Content: Ideas -->
-            <div id="content-idea" class="p-4 h-80 hidden flex-col gap-4">
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Describe your project idea</label>
-                    <textarea id="idea-input" rows="4" placeholder="I need a smart home system..." class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C] resize-none"></textarea>
-                </div>
-                <button onclick="handleIdea()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Get Technical Proposal</button>
-                <div id="idea-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
-            </div>
-
-        </div>
-    </div>
-
     <script>
         lucide.createIcons();
-        const apiKey = "AIzaSyAUj-pdi5nNKz7IK6RoHpXoReVyP5_xlbk"; // API Key injected by environment
-
-        // Contact Data
-        const profileData = {
-            name: "Khandaker Irfan",
-            skills: "Web Development, Arduino, IoT, Electronics, JavaScript, HTML, CSS",
-            role: "Professional"
-        };
 
         function saveContact() {
             const vcard = `BEGIN:VCARD
@@ -418,110 +283,6 @@ END:VCARD`;
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
         }
-
-        // AI Modal Logic
-        function openAI() {
-            document.getElementById('ai-modal').classList.remove('hidden');
-        }
-
-        function closeAI() {
-            document.getElementById('ai-modal').classList.add('hidden');
-        }
-
-        function switchTab(tab) {
-            // Hide all contents
-            ['chat', 'draft', 'idea'].forEach(t => {
-                document.getElementById(`content-${t}`).classList.add('hidden');
-                document.getElementById(`content-${t}`).classList.remove('flex');
-                document.getElementById(`tab-${t}`).classList.remove('active');
-                document.getElementById(`tab-${t}`).classList.remove('text-white');
-                document.getElementById(`tab-${t}`).classList.add('text-gray-400');
-            });
-
-            // Show selected
-            document.getElementById(`content-${tab}`).classList.remove('hidden');
-            document.getElementById(`content-${tab}`).classList.add('flex');
-            document.getElementById(`tab-${tab}`).classList.add('active');
-            document.getElementById(`tab-${tab}`).classList.remove('text-gray-400');
-            document.getElementById(`tab-${tab}`).classList.add('text-white');
-        }
-
-        // Gemini API Helpers
-        async function callGemini(prompt) {
-            try {
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-                const data = await response.json();
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response from AI.";
-            } catch (error) {
-                console.error(error);
-                return "Error connecting to AI.";
-            }
-        }
-
-        // Chat Feature
-        async function handleChat() {
-            const input = document.getElementById('chat-input');
-            const msg = input.value.trim();
-            if (!msg) return;
-
-            // Add User Msg
-            const chatBox = document.getElementById('chat-messages');
-            chatBox.innerHTML += `<div class="chat-msg-user p-3 text-sm self-end w-3/4 ml-auto mb-2">${msg}</div>`;
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            // Loading
-            const loadingId = 'loading-' + Date.now();
-            chatBox.innerHTML += `<div id="${loadingId}" class="chat-msg-ai p-3 text-sm text-gray-400 w-3/4 mb-2">Thinking...</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            // Call AI
-            const prompt = `You are a helpful AI assistant for ${profileData.name}. Skills: ${profileData.skills}. Answer this query briefly: ${msg}`;
-            const reply = await callGemini(prompt);
-
-            // Replace loading with reply
-            document.getElementById(loadingId).remove();
-            chatBox.innerHTML += `<div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4 mb-2">${reply}</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        // Draft Feature
-        async function handleDraft() {
-            const name = document.getElementById('draft-name').value || 'A Visitor';
-            const purpose = document.getElementById('draft-purpose').value;
-            const resultBox = document.getElementById('draft-result');
-            
-            resultBox.classList.remove('hidden');
-            resultBox.textContent = "Generating draft...";
-            
-            const prompt = `Write a short, professional message from ${name} to ${profileData.name} about ${purpose}.`;
-            const draft = await callGemini(prompt);
-            resultBox.textContent = draft;
-        }
-
-        // Idea Feature
-        async function handleIdea() {
-            const idea = document.getElementById('idea-input').value;
-            if(!idea) return;
-            const resultBox = document.getElementById('idea-result');
-            
-            resultBox.classList.remove('hidden');
-            resultBox.textContent = "Analyzing idea...";
-            
-            const prompt = `A client wants to build: "${idea}". You are ${profileData.name}, a developer skilled in ${profileData.skills}. Write a very brief technical proposal (max 100 words).`;
-            const proposal = await callGemini(prompt);
-            resultBox.textContent = proposal;
-        }
-
-        // Allow Enter key in chat
-        document.getElementById('chat-input').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') handleChat();
-        });
     </script>
 </body>
 </html>
