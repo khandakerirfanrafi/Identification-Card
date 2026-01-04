@@ -1,387 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>KHANDAKER IRFAN</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>body {transition: opacity ease-in 0.2s; } 
+    body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>KHANDAKER IRFAN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Deep Green Gradient Background */
-            background: linear-gradient(135deg, #001a0f 0%, #003d29 50%, #00120b 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-        }
-        
-        .card {
-            background: rgba(10, 10, 10, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Deep Green Gradient Background */
+            background: linear-gradient(135deg, #001a0f 0%, #003d29 50%, #00120b 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .card {
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .profile-section {
-            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(5, 30, 20, 0.9) 100%);
-            position: relative;
-            overflow: hidden;
-        }
+        .profile-section {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(5, 30, 20, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-        .profile-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 108, 76, 0.2) 0%, transparent 70%);
-        }
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 108, 76, 0.2) 0%, transparent 70%);
+        }
 
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #006C4C 0%, #005239 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: 700;
-            color: #fff;
-            border: 4px solid rgba(0, 108, 76, 0.5);
-            position: relative;
-            z-index: 1;
-        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #006C4C 0%, #005239 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            border: 3px solid rgba(0, 108, 76, 0.5);
+            position: relative;
+            z-index: 1;
+        }
 
-        .contact-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            padding: 14px;
-            transition: all 0.3s ease;
-        }
+        .contact-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
 
-        .contact-item:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(0, 108, 76, 0.6);
-            transform: translateX(4px);
-        }
+        .contact-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(0, 108, 76, 0.6);
+            transform: translateX(4px);
+        }
 
-        .contact-item a {
-            color: #fff;
-            text-decoration: none;
-        }
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-        .social-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
 
-        .social-btn:hover {
-            background: #006C4C;
-            border-color: #006C4C;
-            transform: scale(1.1);
-        }
+        .social-btn:hover {
+            background: #006C4C;
+            border-color: #006C4C;
+            transform: scale(1.1);
+        }
 
-        .social-btn:hover svg {
-            color: #fff !important;
-        }
+        .social-btn:hover svg {
+            color: #fff !important;
+        }
 
-        .btn-style {
-            font-weight: 600;
-            padding: 14px;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-        }
+        .btn-style {
+            font-weight: 600;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
 
-        .save-btn {
-            background: #006C4C;
-            color: #fff;
-        }
+        .save-btn {
+            background: #006C4C;
+            color: #fff;
+        }
 
-        .save-btn:hover {
-            background: #005239;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 108, 76, 0.4);
-        }
+        .save-btn:hover {
+            background: #005239;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 108, 76, 0.4);
+        }
 
-        .ai-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
+        .ai-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
 
-        .ai-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #006C4C;
-            transform: translateY(-2px);
-        }
+        .ai-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #006C4C;
+            transform: translateY(-2px);
+        }
 
-        /* Modal Styles */
-        .modal-card {
-            background: #0f0f0f;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        /* Modal Styles */
+        .modal-card {
+            background: #0f0f0f;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .tab-btn.active {
-            background: #006C4C;
-            color: white;
-            border-color: #006C4C;
-        }
+        .tab-btn.active {
+            background: #006C4C;
+            color: white;
+            border-color: #006C4C;
+        }
 
-        .chat-msg-ai {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px 12px 12px 0;
-        }
+        .chat-msg-ai {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px 12px 12px 0;
+        }
 
-        .chat-msg-user {
-            background: #006C4C;
-            color: white;
-            border-radius: 12px 12px 0 12px;
-        }
-        
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        .shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-            transform: skewX(-25deg);
-            animation: shimmer 3s infinite;
-        }
-        @keyframes shimmer {
-            100% { left: 200%; }
-        }
-    </style>
+        .chat-msg-user {
+            background: #006C4C;
+            color: white;
+            border-radius: 12px 12px 0 12px;
+        }
+        
+        /* Shimmer effect for AI Button */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-25deg);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            100% { left: 200%; }
+        }
+    </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="card w-full max-w-[400px] rounded-3xl overflow-hidden backdrop-blur-xl">
-        
-        <!-- Profile Section -->
-        <div class="profile-section text-center py-8 px-6">
-            <div class="profile-img mx-auto mb-4">
-                <img src="IMG_20251210_134220.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Khandaker+Irfan&background=006C4C&color=fff&size=130'" alt="Profile" class="w-full h-full object-cover rounded-full">
-            </div>
-            <h1 class="text-2xl font-bold text-white mb-1 uppercase tracking-wide">Khandaker Irfan</h1>
-            <p class="text-sm text-[#006C4C] font-medium mb-1">Software Developer</p>
-            <p class="text-gray-400 text-xs mt-2"><i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i>Dhaka, Bangladesh</p>
-        </div>
+    <div class="card w-full max-w-md rounded-3xl overflow-hidden backdrop-blur-xl">
+        
+        <!-- Profile Section -->
+        <div class="profile-section text-center py-8 px-6">
+            <div class="profile-img mx-auto mb-4">
+                <img src="irfan.png" onerror="this.src='https://ui-avatars.com/api/?name=Khandaker+Irfan&background=006C4C&color=fff'" alt="Profile" class="w-full h-full object-cover rounded-full">
+            </div>
+            <h1 class="text-2xl font-bold text-white mb-1 uppercase">Khandaker Irfan</h1>
+            <p class="text-sm text-[#006C4C] font-medium mb-0.5">Software Developer</p>
+            <p class="text-gray-400 text-xs mt-2"><i data-lucide="map-pin" class="w-3 h-3 inline mr-1"></i>Dhaka, Bangladesh</p>
+        </div>
 
-        <!-- Contact Information -->
-        <div class="p-5 space-y-3">
-            
-            <!-- Phone -->
-            <div class="contact-item">
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-9 h-9 rounded-full bg-[#006C4C]/20 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="phone" class="w-4 h-4 text-[#006C4C]"></i>
-                    </div>
-                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Phone</p>
-                </div>
-                <div class="space-y-2 pl-1">
-                    <a href="tel:01522136088" class="flex items-center justify-between group">
-                        <div>
-                            <p class="text-[10px] text-gray-500 mb-0.5">Primary</p>
-                            <p class="text-white text-base font-medium group-hover:text-[#006C4C] transition-colors">01522136088</p>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all"></i>
-                    </a>
-                    <div class="border-t border-gray-800"></div>
-                    <a href="tel:01552546383" class="flex items-center justify-between group">
-                        <div>
-                            <p class="text-[10px] text-gray-500 mb-0.5">Secondary</p>
-                            <p class="text-white text-base font-medium group-hover:text-[#006C4C] transition-colors">01552546383</p>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- Contact Information -->
+        <div class="p-4 space-y-2">
+            
+            <!-- Phone -->
+            <div class="contact-item">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-9 h-9 rounded-full bg-[#006C4C]/20 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#006C4C]"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Phone</p>
+                </div>
+                <div class="space-y-2 pl-0">
+                    <a href="tel:01522136088" class="flex items-center justify-between group">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-0.5">Primary</p>
+                            <p class="text-white font-medium group-hover:text-[#006C4C] transition-colors">01522136088</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                    <div class="border-t border-gray-800"></div>
+                    <a href="tel:01552546383" class="flex items-center justify-between group">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-0.5">Secondary</p>
+                            <p class="text-white font-medium group-hover:text-[#006C4C] transition-colors">01552546383</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+            </div>
 
-            <!-- Email -->
-            <div class="contact-item">
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-9 h-9 rounded-full bg-[#006C4C]/20 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="mail" class="w-4 h-4 text-[#006C4C]"></i>
-                    </div>
-                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</p>
-                </div>
-                <div class="space-y-2 pl-1">
-                    <a href="mailto:irfankhandakerrafi@gmail.com" class="flex items-center justify-between group">
-                        <div class="flex-1 min-w-0">
-                            <p class="text-[10px] text-gray-500 mb-0.5">Primary</p>
-                            <p class="text-white text-sm font-medium group-hover:text-[#006C4C] transition-colors break-all">irfankhandakerrafi@gmail.com</p>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2"></i>
-                    </a>
-                    <div class="border-t border-gray-800"></div>
-                    <a href="mailto:khandakerirfanrafi@gmail.com" class="flex items-center justify-between group">
-                        <div class="flex-1 min-w-0">
-                            <p class="text-[10px] text-gray-500 mb-0.5">Secondary</p>
-                            <p class="text-white text-sm font-medium group-hover:text-[#006C4C] transition-colors break-all">khandakerirfanrafi@gmail.com</p>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2"></i>
-                    </a>
-                </div>
-            </div>
+            <!-- Email -->
+            <div class="contact-item">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-9 h-9 rounded-full bg-[#006C4C]/20 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="mail" class="w-4 h-4 text-[#006C4C]"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</p>
+                </div>
+                <div class="space-y-2 pl-0">
+                    <a href="mailto:irfankhandakerrafi@gmail.com" class="flex items-center justify-between group">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs text-gray-500 mb-0.5">Primary</p>
+                            <p class="text-white font-medium group-hover:text-[#006C4C] transition-colors break-all text-sm">irfankhandakerrafi@gmail.com</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2"></i>
+                    </a>
+                    <div class="border-t border-gray-800"></div>
+                    <a href="mailto:khandakerirfanrafi@gmail.com" class="flex items-center justify-between group">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs text-gray-500 mb-0.5">Secondary</p>
+                            <p class="text-white font-medium group-hover:text-[#006C4C] transition-colors break-all text-sm">khandakerirfanrafi@gmail.com</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-[#006C4C] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2"></i>
+                    </a>
+                </div>
+            </div>
 
-        </div>
+        </div>
 
-        <!-- Social Media -->
-        <div class="px-6 py-2">
-            <p class="text-xs text-gray-400 mb-3 text-center">Connect with me</p>
-            <div class="flex justify-center gap-4">
-                <a href="https://www.facebook.com/Khandaker.Irfan.Rafi" target="_blank" class="social-btn" title="Facebook">
-                    <i data-lucide="facebook" class="w-5 h-5 text-[#006C4C]"></i>
-                </a>
-                <a href="https://wa.me/8801552546383" target="_blank" class="social-btn" title="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#006C4C]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/khandaker-irfan/" target="_blank" class="social-btn" title="LinkedIn">
-                    <i data-lucide="linkedin" class="w-5 h-5 text-[#006C4C]"></i>
-                </a>
-                <a href="https://github.com/khandakerirfanrafi" target="_blank" class="social-btn" title="GitHub">
-                    <i data-lucide="github" class="w-5 h-5 text-[#006C4C]"></i>
-                </a>
-                <a href="https://x.com/KHANDAKERIRFAN0" target="_blank" class="social-btn" title="X (Twitter)">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#006C4C]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
+        <!-- Social Media -->
+        <div class="px-4">
+            <p class="text-xs text-gray-400 mb-3 text-center">Connect with me</p>
+            <div class="flex justify-center gap-3">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/Khandaker.Irfan.Rafi" target="_blank" class="social-btn" title="Facebook">
+                    <i data-lucide="facebook" class="w-5 h-5 text-[#006C4C]"></i>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801552546383" target="_blank" class="social-btn" title="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#006C4C]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/khandaker-irfan/" target="_blank" class="social-btn" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5 text-[#006C4C]"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/khandakerirfanrafi" target="_blank" class="social-btn" title="GitHub">
+                    <i data-lucide="github" class="w-5 h-5 text-[#006C4C]"></i>
+                </a>
+                <!-- X (Twitter) -->
+                <a href="https://x.com/KHANDAKERIRFAN0" target="_blank" class="social-btn" title="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#006C4C]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
 
-        <!-- Buttons -->
-        <div class="px-6 py-6 flex gap-3">
-            <button onclick="saveContact()" class="btn-style save-btn flex-1">
-                <i data-lucide="user-plus" class="w-5 h-5"></i>
-                <span class="text-base">Save</span>
-            </button>
-            <button onclick="openAI()" class="btn-style ai-btn flex-1 shimmer">
-                <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                <span class="text-base">AI Assist</span>
-            </button>
-        </div>
+        <!-- Buttons -->
+        <!-- Added py-6 for vertical spacing (top and bottom gap) -->
+        <div class="px-4 py-6 flex gap-3">
+            <button onclick="saveContact()" class="btn-style save-btn flex-1">
+                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                <span>Save</span>
+            </button>
+            <button onclick="openAI()" class="btn-style ai-btn flex-1 shimmer">
+                <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
+                <span>AI Assist</span>
+            </button>
+        </div>
 
-        <!-- Footer -->
-        <div class="text-center py-4 border-t border-gray-700/50">
-            <p class="text-xs text-gray-500">© 2026 KHANDAKER IRFAN</p>
-        </div>
+        <!-- Footer -->
+        <div class="text-center py-3 border-t border-gray-700/50">
+            <p class="text-xs text-gray-500">© 2026 KHANDAKER IRFAN</p>
+        </div>
 
-    </div>
+    </div>
 
-    <!-- AI Modal -->
-    <div id="ai-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
-        <div class="modal-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl transform transition-all">
-            <div class="flex justify-between items-center p-4 border-b border-white/10 bg-white/5">
-                <h3 class="text-white font-semibold flex items-center gap-2">
-                    <i data-lucide="bot" class="w-5 h-5 text-[#006C4C]"></i> Irfan's AI Assistant
-                </h3>
-                <button onclick="closeAI()" class="text-gray-400 hover:text-white">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
+    <!-- AI Modal -->
+    <div id="ai-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+        <div class="modal-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl transform transition-all">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-4 border-b border-white/10 bg-white/5">
+                <h3 class="text-white font-semibold flex items-center gap-2">
+                    <i data-lucide="bot" class="w-5 h-5 text-[#006C4C]"></i> Irfan's AI Assistant
+                </h3>
+                <button onclick="closeAI()" class="text-gray-400 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
 
-            <div class="flex p-2 gap-2 bg-black/20">
-                <button onclick="switchTab('chat')" id="tab-chat" class="tab-btn active flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Chat</button>
-                <button onclick="switchTab('draft')" id="tab-draft" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Draft</button>
-                <button onclick="switchTab('idea')" id="tab-idea" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Ideas</button>
-            </div>
+            <!-- Tabs -->
+            <div class="flex p-2 gap-2 bg-black/20">
+                <button onclick="switchTab('chat')" id="tab-chat" class="tab-btn active flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Chat</button>
+                <button onclick="switchTab('draft')" id="tab-draft" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Draft</button>
+                <button onclick="switchTab('idea')" id="tab-idea" class="tab-btn flex-1 py-2 text-sm font-medium rounded-lg text-gray-400 transition-colors">Ideas</button>
+            </div>
 
-            <!-- Tab Content: Chat -->
-            <div id="content-chat" class="p-4 h-80 flex flex-col">
-                <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 mb-4 pr-2">
-                    <div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4">
-                        Hi! I'm Irfan's AI assistant. Ask me anything about his skills or projects!
-                    </div>
-                </div>
-                <div class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="Ask something..." class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                    <button onclick="handleChat()" class="bg-[#006C4C] p-2 rounded-lg text-white hover:bg-[#005239]">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
+            <!-- Tab Content: Chat -->
+            <div id="content-chat" class="p-4 h-80 flex flex-col">
+                <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 mb-4 pr-2">
+                    <div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4">
+                        Hi! I'm Irfan's AI assistant. Ask me anything about his skills or projects!
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Ask something..." class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
+                    <button onclick="handleChat()" class="bg-[#006C4C] p-2 rounded-lg text-white hover:bg-[#005239]">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
 
-            <!-- Tab Content: Draft -->
-            <div id="content-draft" class="p-4 h-80 hidden flex-col gap-4">
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Your Name</label>
-                    <input type="text" id="draft-name" placeholder="e.g. John Doe" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Purpose</label>
-                    <select id="draft-purpose" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
-                        <option value="Hiring" class="bg-gray-900">Hiring Inquiry</option>
-                        <option value="Collaboration" class="bg-gray-900">Collaboration</option>
-                        <option value="Greeting" class="bg-gray-900">Just Saying Hi</option>
-                    </select>
-                </div>
-                <button onclick="handleDraft()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Generate Message</button>
-                <div id="draft-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
-            </div>
+            <!-- Tab Content: Draft -->
+            <div id="content-draft" class="p-4 h-80 hidden flex-col gap-4">
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Your Name</label>
+                    <input type="text" id="draft-name" placeholder="e.g. John Doe" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Purpose</label>
+                    <select id="draft-purpose" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C]">
+                        <option value="Hiring" class="bg-gray-900">Hiring Inquiry</option>
+                        <option value="Collaboration" class="bg-gray-900">Collaboration</option>
+                        <option value="Greeting" class="bg-gray-900">Just Saying Hi</option>
+                    </select>
+                </div>
+                <button onclick="handleDraft()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Generate Message</button>
+                <div id="draft-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
+            </div>
 
-            <!-- Tab Content: Ideas -->
-            <div id="content-idea" class="p-4 h-80 hidden flex-col gap-4">
-                <div>
-                    <label class="block text-xs text-gray-400 mb-1">Describe your project idea</label>
-                    <textarea id="idea-input" rows="4" placeholder="I need a smart home system..." class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C] resize-none"></textarea>
-                </div>
-                <button onclick="handleIdea()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Get Technical Proposal</button>
-                <div id="idea-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
-            </div>
+            <!-- Tab Content: Ideas -->
+            <div id="content-idea" class="p-4 h-80 hidden flex-col gap-4">
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Describe your project idea</label>
+                    <textarea id="idea-input" rows="4" placeholder="I need a smart home system..." class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#006C4C] resize-none"></textarea>
+                </div>
+                <button onclick="handleIdea()" class="w-full bg-[#006C4C] py-2 rounded-lg text-white font-medium text-sm hover:bg-[#005239]">Get Technical Proposal</button>
+                <div id="idea-result" class="flex-1 bg-black/30 rounded-lg p-3 text-xs text-gray-300 overflow-y-auto hidden"></div>
+            </div>
 
-        </div>
-    </div>
+        </div>
+    </div>
 
-    <script>
-        lucide.createIcons();
-        const apiKey = "AIzaSyAUj-pdi5nNKz7IK6RoHpXoReVyP5_xlbk"; // Using the API key provided by the user
+    <script>
+        lucide.createIcons();
+        const apiKey = "AIzaSyAUj-pdi5nNKz7IK6RoHpXoReVyP5_xlbk"; // API Key injected by environment
 
-        const profileData = {
-            name: "Khandaker Irfan",
-            skills: "Web Development, Arduino, IoT, Electronics, JavaScript, HTML, CSS",
-            role: "Professional"
-        };
+        // Contact Data
+        const profileData = {
+            name: "Khandaker Irfan",
+            skills: "Web Development, Arduino, IoT, Electronics, JavaScript, HTML, CSS",
+            role: "Professional"
+        };
 
-        function saveContact() {
-            const vcard = `BEGIN:VCARD
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Khandaker Irfan
 N:Irfan;Khandaker;;;
@@ -395,110 +408,120 @@ URL;TYPE=LINKEDIN:https://www.linkedin.com/in/khandaker-irfan/
 ADR;TYPE=HOME:;;Dhaka;Bangladesh;;;
 END:VCARD`;
 
-            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Khandaker_Irfan.vcf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Khandaker_Irfan.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
 
-        function openAI() { document.getElementById('ai-modal').classList.remove('hidden'); }
-        function closeAI() { document.getElementById('ai-modal').classList.add('hidden'); }
+        // AI Modal Logic
+        function openAI() {
+            document.getElementById('ai-modal').classList.remove('hidden');
+        }
 
-        function switchTab(tab) {
-            ['chat', 'draft', 'idea'].forEach(t => {
-                document.getElementById(`content-${t}`).classList.add('hidden');
-                document.getElementById(`content-${t}`).classList.remove('flex');
-                document.getElementById(`tab-${t}`).classList.remove('active');
-                document.getElementById(`tab-${t}`).classList.remove('text-white');
-                document.getElementById(`tab-${t}`).classList.add('text-gray-400');
-            });
-            document.getElementById(`content-${tab}`).classList.remove('hidden');
-            document.getElementById(`content-${tab}`).classList.add('flex');
-            document.getElementById(`tab-${tab}`).classList.add('active');
-            document.getElementById(`tab-${tab}`).classList.remove('text-gray-400');
-            document.getElementById(`tab-${tab}`).classList.add('text-white');
-        }
+        function closeAI() {
+            document.getElementById('ai-modal').classList.add('hidden');
+        }
 
-        async function callGemini(prompt) {
-            try {
-                // Using gemini-1.5-flash for broader compatibility
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-                
-                const data = await response.json();
-                
-                if (data.error) {
-                    console.error("API Error:", data.error);
-                    return "Error: " + (data.error.message || "Unknown API error");
-                }
-                
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response from AI.";
-            } catch (error) {
-                console.error(error);
-                return "Error connecting to AI. Check your internet or Key.";
-            }
-        }
+        function switchTab(tab) {
+            // Hide all contents
+            ['chat', 'draft', 'idea'].forEach(t => {
+                document.getElementById(`content-${t}`).classList.add('hidden');
+                document.getElementById(`content-${t}`).classList.remove('flex');
+                document.getElementById(`tab-${t}`).classList.remove('active');
+                document.getElementById(`tab-${t}`).classList.remove('text-white');
+                document.getElementById(`tab-${t}`).classList.add('text-gray-400');
+            });
 
-        async function handleChat() {
-            const input = document.getElementById('chat-input');
-            const msg = input.value.trim();
-            if (!msg) return;
+            // Show selected
+            document.getElementById(`content-${tab}`).classList.remove('hidden');
+            document.getElementById(`content-${tab}`).classList.add('flex');
+            document.getElementById(`tab-${tab}`).classList.add('active');
+            document.getElementById(`tab-${tab}`).classList.remove('text-gray-400');
+            document.getElementById(`tab-${tab}`).classList.add('text-white');
+        }
 
-            const chatBox = document.getElementById('chat-messages');
-            chatBox.innerHTML += `<div class="chat-msg-user p-3 text-sm self-end w-3/4 ml-auto mb-2">${msg}</div>`;
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight;
+        // Gemini API Helpers
+        async function callGemini(prompt) {
+            try {
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response from AI.";
+            } catch (error) {
+                console.error(error);
+                return "Error connecting to AI.";
+            }
+        }
 
-            const loadingId = 'loading-' + Date.now();
-            chatBox.innerHTML += `<div id="${loadingId}" class="chat-msg-ai p-3 text-sm text-gray-400 w-3/4 mb-2">Thinking...</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
+        // Chat Feature
+        async function handleChat() {
+            const input = document.getElementById('chat-input');
+            const msg = input.value.trim();
+            if (!msg) return;
 
-            const prompt = `You are a helpful AI assistant for ${profileData.name}. Skills: ${profileData.skills}. Role: ${profileData.role}. Answer this query briefly: ${msg}`;
-            const reply = await callGemini(prompt);
+            // Add User Msg
+            const chatBox = document.getElementById('chat-messages');
+            chatBox.innerHTML += `<div class="chat-msg-user p-3 text-sm self-end w-3/4 ml-auto mb-2">${msg}</div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
 
-            document.getElementById(loadingId).remove();
-            chatBox.innerHTML += `<div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4 mb-2">${reply}</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+            // Loading
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `<div id="${loadingId}" class="chat-msg-ai p-3 text-sm text-gray-400 w-3/4 mb-2">Thinking...</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
 
-        async function handleDraft() {
-            const name = document.getElementById('draft-name').value || 'A Visitor';
-            const purpose = document.getElementById('draft-purpose').value;
-            const resultBox = document.getElementById('draft-result');
-            
-            resultBox.classList.remove('hidden');
-            resultBox.textContent = "Generating draft...";
-            
-            const prompt = `Write a short, professional message from ${name} to ${profileData.name} about ${purpose}.`;
-            const draft = await callGemini(prompt);
-            resultBox.textContent = draft;
-        }
+            // Call AI
+            const prompt = `You are a helpful AI assistant for ${profileData.name}. Skills: ${profileData.skills}. Answer this query briefly: ${msg}`;
+            const reply = await callGemini(prompt);
 
-        async function handleIdea() {
-            const idea = document.getElementById('idea-input').value;
-            if(!idea) return;
-            const resultBox = document.getElementById('idea-result');
-            
-            resultBox.classList.remove('hidden');
-            resultBox.textContent = "Analyzing idea...";
-            
-            const prompt = `A client wants to build: "${idea}". You are ${profileData.name}, a developer skilled in ${profileData.skills}. Write a very brief technical proposal (max 100 words).`;
-            const proposal = await callGemini(prompt);
-            resultBox.textContent = proposal;
-        }
+            // Replace loading with reply
+            document.getElementById(loadingId).remove();
+            chatBox.innerHTML += `<div class="chat-msg-ai p-3 text-sm text-gray-200 w-3/4 mb-2">${reply}</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
 
-        document.getElementById('chat-input').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') handleChat();
-        });
-    </script>
+        // Draft Feature
+        async function handleDraft() {
+            const name = document.getElementById('draft-name').value || 'A Visitor';
+            const purpose = document.getElementById('draft-purpose').value;
+            const resultBox = document.getElementById('draft-result');
+            
+            resultBox.classList.remove('hidden');
+            resultBox.textContent = "Generating draft...";
+            
+            const prompt = `Write a short, professional message from ${name} to ${profileData.name} about ${purpose}.`;
+            const draft = await callGemini(prompt);
+            resultBox.textContent = draft;
+        }
+
+        // Idea Feature
+        async function handleIdea() {
+            const idea = document.getElementById('idea-input').value;
+            if(!idea) return;
+            const resultBox = document.getElementById('idea-result');
+            
+            resultBox.classList.remove('hidden');
+            resultBox.textContent = "Analyzing idea...";
+            
+            const prompt = `A client wants to build: "${idea}". You are ${profileData.name}, a developer skilled in ${profileData.skills}. Write a very brief technical proposal (max 100 words).`;
+            const proposal = await callGemini(prompt);
+            resultBox.textContent = proposal;
+        }
+
+        // Allow Enter key in chat
+        document.getElementById('chat-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') handleChat();
+        });
+    </script>
 </body>
 </html>
